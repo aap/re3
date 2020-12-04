@@ -4,7 +4,7 @@ enum Config {
 	NUMPLAYERS = 1,	// 4 on PS2
 
 	NUMCDIMAGES = 12, // gta3.img duplicates (not used on PC)
-	MAX_CDIMAGES = 8, // additional cdimages
+	MAX_CDIMAGES = 32, // additional cdimages
 	MAX_CDCHANNELS = 5,
 
 	MODELINFOSIZE = 5500,	// 3150 on PS2
@@ -171,6 +171,8 @@ enum Config {
 
 #define GTA_VERSION	GTA3_PC_11
 
+#define GTA_ALPHA_MOD
+
 // quality of life fixes that should also be in FINAL
 #define NASTY_GAME	// nasty game for all languages
 #define NO_CDCHECK
@@ -336,6 +338,7 @@ enum Config {
 
 // Peds
 #define PED_SKIN		// support for skinned geometry on peds
+#define ADAPT_PED_HIERARCHY	// make hierarchies independent of cop model
 #define ANIMATE_PED_COL_MODEL
 // #define VC_PED_PORTS			// various ports from VC's CPed, mostly subtle
 // #define NEW_WALK_AROUND_ALGORITHM	// to make walking around vehicles/objects less awkward
@@ -349,7 +352,7 @@ enum Config {
 
 // Audio
 #ifndef AUDIO_OAL // is not working yet for openal
-#define AUDIO_CACHE // cache sound lengths to speed up the cold boot
+//#define AUDIO_CACHE // cache sound lengths to speed up the cold boot
 #endif
 //#define PS2_AUDIO   // changes audio paths for cutscenes and radio to PS2 paths, needs vbdec to support VB with MSS
 

@@ -436,12 +436,16 @@ bool CGame::Initialise(const char* datFile)
 	CTheCarGenerators::Init();
 #endif
 
+#ifndef GTA_ALPHA_MOD
 #ifndef GTA_PS2		// or GTA_VERSION?
 	CdStreamAddImage("MODELS\\GTA3.IMG");
 #endif
+#endif
 
 #if GTA_VERSION > GTA3_PS2_160
+#ifndef GTA_ALPHA_MOD
 	CFileLoader::LoadLevel("DATA\\DEFAULT.DAT");
+#endif
 	CFileLoader::LoadLevel(datFile);
 #else
 	CFileLoader::LoadLevel("GTA3.DAT");

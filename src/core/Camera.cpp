@@ -3452,6 +3452,9 @@ CCamera::GetScreenFadeStatus(void)
 void
 CCamera::RenderMotionBlur(void)
 {
+#ifdef GTA_ALPHA_MOD
+return;
+#endif
 	if(m_BlurType == 0)
 		return;
 

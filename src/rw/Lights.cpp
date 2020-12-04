@@ -38,9 +38,13 @@ SetLightsWithTimeOfDayColour(RpWorld *)
 			AmbientLightColourForFrame.green = 1.0f;
 			AmbientLightColourForFrame.blue = 1.0f;
 		}
+#ifdef GTA_ALPHA_MOD
+		AmbientLightColourForFrame_PedsCarsAndObjects = AmbientLightColourForFrame;
+#else
 		AmbientLightColourForFrame_PedsCarsAndObjects.red = Min(1.0f, AmbientLightColourForFrame.red*1.3f);
 		AmbientLightColourForFrame_PedsCarsAndObjects.green = Min(1.0f, AmbientLightColourForFrame.green*1.3f);
 		AmbientLightColourForFrame_PedsCarsAndObjects.blue = Min(1.0f, AmbientLightColourForFrame.blue*1.3f);
+#endif
 		RpLightSetColor(pAmbient, &AmbientLightColourForFrame);
 	}
 

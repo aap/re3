@@ -2012,7 +2012,7 @@ WinMain(HINSTANCE instance,
 	SystemParametersInfo(SPI_SETFOREGROUNDLOCKTIMEOUT, 0, nil, SPIF_SENDCHANGE);
 
 #ifndef MASTER
-	if (strstr(cmdLine, "-console"))
+//	if (strstr(cmdLine, "-console"))
 	{
 		AllocConsole();
 		freopen("CONIN$", "r", stdin);

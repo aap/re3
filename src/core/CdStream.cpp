@@ -135,8 +135,12 @@ CdStreamInit(int32 numChannels)
 	ASSERT( gpReadInfo != nil );
 	
 	CDDEBUG("read info %p", gpReadInfo);
-	
+
+#ifdef GTA_ALPHA_MOD
+	CdStreamAddImage("MODELS\\CDIMAGES\\TXD.IMG");
+#else
 	CdStreamAddImage("MODELS\\GTA3.IMG");
+#endif
 	
 	int32 nStatus = CdStreamRead(0, pBuffer, 0, 1);
 	

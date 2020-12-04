@@ -58,7 +58,7 @@ function getarch(a)
 	return a
 end
 
-workspace "re3"
+workspace "re3d"
 	language "C++"
 	configurations { "Debug", "Release" }
 	location "build"
@@ -224,9 +224,9 @@ local function addSrcFiles( prefix )
 	return prefix .. "/*cpp", prefix .. "/*.h", prefix .. "/*.c", prefix .. "/*.ico", prefix .. "/*.rc"
 end
 
-project "re3"
+project "re3d"
 	kind "WindowedApp"
-	targetname "re3"
+	targetname "re3d"
 	targetdir "bin/%{cfg.platform}/%{cfg.buildcfg}"
 
 	files { addSrcFiles("src") }
@@ -300,7 +300,8 @@ project "re3"
 	
 	filter {}
 	if(os.getenv("GTA_III_RE_DIR")) then
-		setpaths("$(GTA_III_RE_DIR)/", "%(cfg.buildtarget.name)", "")
+--		setpaths("$(GTA_III_RE_DIR)/", "%(cfg.buildtarget.name)", "")
+		setpaths("C:/Users/aap/games/gta3d_latest12-1b-20/", "%(cfg.buildtarget.name)", "")
 	end
 	
 	filter "platforms:win*"
